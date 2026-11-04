@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento de Cursos & Horario</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente moderna y limpia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-container">
+            <h1>Panel de Control Universitario</h1>
+            <p class="subtitle">Ingeniería en Telecomunicaciones — Control de Cursos & Horario</p>
+        </div>
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchTab('seguimiento')">Seguimiento de Cursos</button>
+            <button class="tab-btn" onclick="switchTab('horario')">Horario Semanal</button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- SECCIÓN 1: SEGUIMIENTO DE CURSOS -->
+        <section id="seguimiento-section" class="tab-content active">
+            <div class="section-header">
+                <h2>Tabla de Cursos</h2>
+                <button class="btn-primary" onclick="agregarCurso()">+ Agregar Curso</button>
+            </div>
+            
+            <div class="table-wrapper">
+                <table id="tabla-cursos">
+                    <thead>
+                        <tr>
+                            <th>Observación</th>
+                            <th>Curso</th>
+                            <th>Grupos</th>
+                            <th>Docente & Contacto</th>
+                            <th>Estado</th>
+                            <th>Fecha Exam/Pub</th>
+                            <th>Sílabo (PDF / Link)</th>
+                            <th>Cuaderno (Docs)</th>
+                            <th>¿Qué se hace?</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cursos-body">
+                        <!-- Se puebla dinámicamente desde JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: HORARIO SEMANAL -->
+        <section id="horario-section" class="tab-content">
+            <div class="section-header">
+                <h2>Horario Semanal de Clases</h2>
+            </div>
+            
+            <div class="table-wrapper">
+                <table id="tabla-horario">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Lunes</th>
+                            <th>Martes</th>
+                            <th>Miércoles</th>
+                            <th>Jueves</th>
+                            <th>Viernes</th>
+                            <th>Sábado</th>
+                            <th>Domingo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="horario-body">
+                        <!-- Se puebla dinámicamente desde JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
