@@ -1,13 +1,13 @@
 :root {
-    --bg-main: #0f172a;       /* Azul noche muy oscuro */
-    --bg-card: #1e293b;       /* Azul pizarra */
-    --bg-hover: #334155;      /* Gris azulado medio */
-    --border-color: #475569;  /* Bordes fríos */
-    --text-primary: #f8fafc;  /* Blanco frío */
-    --text-secondary: #94a3b8;/* Gris frío secundario */
-    --accent-cyan: #38bdf8;    /* Cyan acento */
-    --accent-blue: #60a5fa;    /* Azul acento */
-    --accent-red: #f87171;     /* Rojo pastel para los cursos adicionales */
+    --bg-main: #121417;       /* Gris grafito muy oscuro */
+    --bg-card: #1c2128;       /* Gris pizarra oscuro */
+    --bg-hover: #262c36;      /* Gris medio para hover */
+    --border-color: #374151;  /* Bordes sutiles fríos */
+    --text-primary: #f3f4f6;  /* Blanco grisáceo */
+    --text-secondary: #9ca3af;/* Gris claro secundario */
+    --accent-gray: #6b7280;   /* Gris acero */
+    --accent-silver: #9ca3af; /* Plata acento */
+    --accent-red: #ef4444;    /* Rojo pastel para los cursos adicionales */
     --radius: 8px;
 }
 
@@ -27,7 +27,7 @@ body {
 
 .header-container h1 {
     font-size: 1.8rem;
-    color: var(--accent-cyan);
+    color: var(--text-primary);
     font-weight: 700;
 }
 
@@ -63,9 +63,9 @@ body {
 }
 
 .tab-btn.active, .tab-btn:hover {
-    background-color: var(--accent-cyan);
-    color: var(--bg-main);
-    border-color: var(--accent-cyan);
+    background-color: var(--accent-gray);
+    color: #ffffff;
+    border-color: var(--accent-gray);
 }
 
 .tab-content {
@@ -84,13 +84,18 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--accent-blue);
-    color: var(--bg-main);
-    border: none;
+    background-color: #374151;
+    color: #f3f4f6;
+    border: 1px solid var(--border-color);
     padding: 8px 16px;
     border-radius: var(--radius);
     font-weight: 600;
     cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #4b5563;
 }
 
 .table-wrapper {
@@ -108,11 +113,16 @@ table {
 }
 
 th {
-    background-color: #0b1120;
-    color: var(--accent-cyan);
+    background-color: #0b0d10;
+    color: var(--text-secondary);
     padding: 12px;
     border-bottom: 1px solid var(--border-color);
     white-space: nowrap;
+}
+
+/* Columna de Estado más ancha y cómoda */
+th.col-estado, td.col-estado {
+    min-width: 160px;
 }
 
 td {
@@ -125,10 +135,10 @@ tr:hover {
     background-color: var(--bg-hover);
 }
 
-/* Inputs y Selects dentro de la tabla */
-input[type="text"], input[type="date"], select {
+/* Inputs, Selects y Contenedores de Fecha */
+input[type="text"], select {
     width: 100%;
-    background: #0f172a;
+    background: #111318;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 6px 8px;
@@ -137,8 +147,18 @@ input[type="text"], input[type="date"], select {
 }
 
 input[type="text"]:focus, select:focus {
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-gray);
     outline: none;
+}
+
+.date-container {
+    display: flex;
+    gap: 4px;
+}
+
+.date-container select {
+    font-size: 0.78rem;
+    padding: 4px;
 }
 
 .badge-red {
@@ -152,11 +172,11 @@ input[type="text"]:focus, select:focus {
     font-size: 0.78rem;
     text-align: center;
     font-weight: 500;
-    background-color: #334155;
+    background-color: #262c36;
 }
 
 .class-red {
-    background-color: #7f1d1d;
+    background-color: #451a03;
     color: #fca5a5;
     border: 1px solid var(--accent-red);
 }
